@@ -1,2 +1,2 @@
-# SOLITAIRE
+# Tamagotchi chill
 3E PROGRAM PROJECT
