@@ -3,7 +3,8 @@
 class Personaje {
 public:
     Personaje(sf::Vector2f position, sf::Color color) {
-        shape.setSize(sf::Vector2f(50, 50));
+        //shape.setSize(sf::Vector2f(50, 50));
+        shape.setRadius(25.f);
         shape.setPosition(position);
         shape.setFillColor(color);
     }
@@ -17,7 +18,8 @@ public:
     }
 
 private:
-    sf::RectangleShape shape;
+    //sf::RectangleShape shape;
+    sf::CircleShape shape;
 };
 
 double velocidad = 0.1;
