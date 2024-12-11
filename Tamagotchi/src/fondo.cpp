@@ -14,6 +14,26 @@ sf::Font font;
         return -1;
     }
 
+//Pantalla (Espacio donde se ve el juego)
+sf::RectangleShape pantalla(sf::Vector2f(350, 250));
+    pantalla.setFillColor(sf::Color(200, 200, 200));
+    pantalla.setPosition(125,175);
+//Márgenes de pantalla
+sf::RectangleShape mpantalla(sf::Vector2f(358, 258));
+    mpantalla.setFillColor(sf::Color::Black);
+    mpantalla.setPosition(121,171);
+// Menú en la pantalla
+sf::Text menu;
+    menu.setFont(font);
+    menu.setString("Alimentar    Dormir     Jugar   Salir");
+    menu.setCharacterSize(15);
+    menu.setFillColor(sf::Color::White);
+    menu.setPosition(127.f,405.f);
+//Fondo de menú en pantalla
+sf::RectangleShape fmenu(sf::Vector2f(350.f, 25.f));
+    fmenu.setFillColor(sf::Color(54, 54, 52));
+    fmenu.setPosition(125.f,400.f);
+
 // Texto botón A
 sf::Text A;
     A.setFont(font);
@@ -41,7 +61,7 @@ sf::Text D;
 //Base azul del Tamagotchi
 sf::CircleShape ovalo(250.f);
     ovalo.setScale(1.0f, 1.25f);
-    ovalo.setFillColor(sf::Color::Blue);
+    ovalo.setFillColor(sf::Color(20, 96, 164));
 //Posición del ovalo en el centro de la ventana
     ovalo.setPosition(center.x - ovalo.getRadius(), center.y - ovalo.getRadius()* ovalo.getScale().y);
 
@@ -57,11 +77,6 @@ sf::CircleShape bsel(25.f);
 sf::CircleShape bder(25.f);
     bder.setPosition(375.f,500.f);
 
-//Pantalla (Espacio donde se ve el juego)
-sf::RectangleShape pantalla(sf::Vector2f(350.f, 250.f));
-    pantalla.setFillColor(sf::Color(200, 200, 200));
-    pantalla.setPosition(125.f,175.f);
-
 
 while (window.isOpen())
 {
@@ -75,19 +90,19 @@ while (window.isOpen())
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
         //Color cuando sea presionado
-        bizq.setFillColor(sf::Color::Transparent);
+        bizq.setFillColor(sf::Color(250, 126, 51));
     } else {
-        bizq.setFillColor(sf::Color(255, 234, 101 ));
+        bizq.setFillColor(sf::Color(255, 229, 64));
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
         bsel.setFillColor(sf::Color(250, 126, 51));
     } else {
-        bsel.setFillColor(sf::Color(255, 234, 101 ));
+        bsel.setFillColor(sf::Color(255, 229, 64));
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
         bder.setFillColor(sf::Color(250, 126, 51));
     } else {
-        bder.setFillColor(sf::Color(255, 234, 101 ));
+        bder.setFillColor(sf::Color(255, 229, 64));
     }
     
 
@@ -96,7 +111,11 @@ while (window.isOpen())
     //Óvalo
     window.draw(ovalo);
     //Pantalla
+    window.draw(mpantalla);
     window.draw(pantalla);
+    window.draw(fmenu);
+    window.draw(menu);
+    
     //Botones
     window.draw(bizq);
     window.draw(bsel);
