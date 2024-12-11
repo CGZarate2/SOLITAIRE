@@ -20,6 +20,7 @@
 
     Juan "1" o-- "1" Pantalla
     Juan "1" o-- "3" Juego
+    Muerte "1" o-- "1" Juan
 
     Comida --|> Juego
     Siesta --|> Juego

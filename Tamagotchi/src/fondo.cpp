@@ -47,24 +47,19 @@ sf::CircleShape ovalo(250.f);
 
 //Botón izquierda
 sf::CircleShape bizq(25.f);
-    bizq.setFillColor(sf::Color::Yellow);
     bizq.setPosition(175.f,500.f);
 
 //Botón seleccionar
 sf::CircleShape bsel(25.f);
-    bsel.setFillColor(sf::Color::Yellow);
-    //Color cuando sea presionado
-    //bsel.setFillColor(sf::Color(0Xffae57));
     bsel.setPosition(275.f,550.f);
 
 //Botón derecha
 sf::CircleShape bder(25.f);
-    bder.setFillColor(sf::Color::Yellow);
     bder.setPosition(375.f,500.f);
 
 //Pantalla (Espacio donde se ve el juego)
 sf::RectangleShape pantalla(sf::Vector2f(350.f, 250.f));
-    pantalla.setFillColor(sf::Color(0xc7ebbc));
+    pantalla.setFillColor(sf::Color(200, 200, 200));
     pantalla.setPosition(125.f,175.f);
 
 
@@ -77,6 +72,24 @@ while (window.isOpen())
         if (event.type == sf::Event::Closed)
             window.close();
     }
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+        //Color cuando sea presionado
+        bizq.setFillColor(sf::Color::Transparent);
+    } else {
+        bizq.setFillColor(sf::Color(255, 234, 101 ));
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+        bsel.setFillColor(sf::Color(250, 126, 51));
+    } else {
+        bsel.setFillColor(sf::Color(255, 234, 101 ));
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+        bder.setFillColor(sf::Color(250, 126, 51));
+    } else {
+        bder.setFillColor(sf::Color(255, 234, 101 ));
+    }
+    
 
     // Limpiar la ventana
     window.clear();
