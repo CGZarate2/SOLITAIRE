@@ -1,0 +1,27 @@
+@startuml Diagrama
+
+    Class Usuario
+    Class Tamagotchi
+    Class Pantalla
+    Class Boton
+    Class Juan
+    Class Juego
+    Class Comida
+    Class Siesta
+    Class Actividad
+    
+    Usuario "1" o-- "1" Tamagotchi
+    Tamagotchi "1" *-- "1" Pantalla
+    Tamagotchi "1" *-- "3" Boton
+    Tamagotchi "1" *-- "1" Juan
+
+    Juan "1" o-- "1" Pantalla
+    Juan "1" o-- "3" Juego
+
+    Comida --|> Juego
+    Siesta --|> Juego
+    Actividad --|> Juego
+
+
+
+@enduml
