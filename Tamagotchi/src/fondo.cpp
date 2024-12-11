@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 int main()
 {
@@ -22,17 +23,36 @@ sf::RectangleShape pantalla(sf::Vector2f(350, 250));
 sf::RectangleShape mpantalla(sf::Vector2f(358, 258));
     mpantalla.setFillColor(sf::Color::Black);
     mpantalla.setPosition(121,171);
+
 // Menú en la pantalla
-sf::Text menu;
-    menu.setFont(font);
-    menu.setString("Alimentar    Dormir     Jugar   Salir");
-    menu.setCharacterSize(15);
-    menu.setFillColor(sf::Color::White);
-    menu.setPosition(127.f,405.f);
+sf::Text alimentar;
+    alimentar.setFont(font);
+    alimentar.setString("Alimentar");
+    alimentar.setCharacterSize(15);
+    alimentar.setFillColor(sf::Color(255, 229, 64));
+    alimentar.setPosition(130,405);
+sf::Text dormir;
+    dormir.setFont(font);
+    dormir.setString("Dormir");
+    dormir.setCharacterSize(15);
+    dormir.setFillColor(sf::Color(255, 229, 64));
+    dormir.setPosition(250,405);
+sf::Text jugar;
+    jugar.setFont(font);
+    jugar.setString("Jugar");
+    jugar.setCharacterSize(15);
+    jugar.setFillColor(sf::Color(255, 229, 64));
+    jugar.setPosition(350,405);
+sf::Text salir;
+    salir.setFont(font);
+    salir.setString("Salir");
+    salir.setCharacterSize(15);
+    salir.setFillColor(sf::Color(255, 229, 64));
+    salir.setPosition(425,405);
 //Fondo de menú en pantalla
-sf::RectangleShape fmenu(sf::Vector2f(350.f, 25.f));
+sf::RectangleShape fmenu(sf::Vector2f(350, 25));
     fmenu.setFillColor(sf::Color(54, 54, 52));
-    fmenu.setPosition(125.f,400.f);
+    fmenu.setPosition(125,400);
 
 // Texto botón A
 sf::Text A;
@@ -114,7 +134,10 @@ while (window.isOpen())
     window.draw(mpantalla);
     window.draw(pantalla);
     window.draw(fmenu);
-    window.draw(menu);
+    window.draw(alimentar);
+    window.draw(dormir);
+    window.draw(jugar);
+    window.draw(salir);
     
     //Botones
     window.draw(bizq);
