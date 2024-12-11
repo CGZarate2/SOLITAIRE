@@ -9,8 +9,11 @@
     Class Comida
     Class Siesta
     Class Actividad
+    Class Salida
+    Class Muerte
     
     Usuario "1" o-- "1" Tamagotchi
+    Usuario "1" o-- "1" Salida
     Tamagotchi "1" *-- "1" Pantalla
     Tamagotchi "1" *-- "3" Boton
     Tamagotchi "1" *-- "1" Juan
@@ -21,7 +24,6 @@
     Comida --|> Juego
     Siesta --|> Juego
     Actividad --|> Juego
-
-
+    Salida --|> Muerte
 
 @enduml
