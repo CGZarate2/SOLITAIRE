@@ -15,13 +15,23 @@ ovalo.setPosition(center.x - ovalo.getRadius(), center.y - ovalo.getRadius()* ov
 
 //Botón izquierda
 sf::CircleShape bizq(25.f);
-bizq.setFillColor(sf::Color(0xb2dff3));
-bizq.setPosition(150.f,500.f);
+bizq.setFillColor(sf::Color::Yellow);
+bizq.setPosition(175.f,500.f);
+
+//Botón seleccionar
+sf::CircleShape bsel(25.f);
+bsel.setFillColor(sf::Color::Yellow);
+bsel.setPosition(275.f,550.f);
 
 //Botón derecha
 sf::CircleShape bder(25.f);
-bder.setFillColor(sf::Color(0xb2dff3));
-bder.setPosition(450.f,500.f);
+bder.setFillColor(sf::Color::Yellow);
+bder.setPosition(375.f,500.f);
+
+//Pantalla (Espacio donde se ve el juego)
+sf::RectangleShape pantalla(sf::Vector2f(350.f, 250.f));
+pantalla.setFillColor(sf::Color(0xc7ebbc));
+pantalla.setPosition(125.f,175.f);
 
 
 while (window.isOpen())
@@ -38,8 +48,11 @@ while (window.isOpen())
     window.clear();
     //Óvalo
     window.draw(ovalo);
+    //Pantalla
+    window.draw(pantalla);
     //Botones
     window.draw(bizq);
+    window.draw(bsel);
     window.draw(bder);
     // Mostrar la ventana
     window.display();
