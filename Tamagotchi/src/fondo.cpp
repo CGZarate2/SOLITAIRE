@@ -96,93 +96,91 @@ while (window.isOpen())
         }
     }
 
-    
-
     //Acciones según el valor de opcion
-    if(opcion == 1){
-        alimentar.setFillColor(sf::Color(250, 126, 51));
-        //Cambio de color de botones al ser presionados
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-            bsel.setFillColor(sf::Color(250, 126, 51));
-        } else {
-            bsel.setFillColor(sf::Color(255, 229, 64));
-        }
-            
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-            bder.setFillColor(sf::Color(250, 126, 51));
-            opcion++;
-        } else {
-            bder.setFillColor(sf::Color(255, 229, 64));
-        }        
-    } else {
+    switch(opcion){
+        case 1://Alimentar
+            alimentar.setFillColor(sf::Color(250, 126, 51));
+            dormir.setFillColor(sf::Color(255, 229, 64));
+            jugar.setFillColor(sf::Color(255, 229, 64));
+            salir.setFillColor(sf::Color(255, 229, 64));
+            //Cambio de color de botones al ser presionados
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+                bsel.setFillColor(sf::Color(250, 126, 51));
+            } else {
+                bsel.setFillColor(sf::Color(255, 229, 64));
+            }
+                
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+                bder.setFillColor(sf::Color(250, 126, 51));
+                opcion++;
+            } else {
+                bder.setFillColor(sf::Color(255, 229, 64));
+            }
+            break;
+        case 2://Dormir
+            dormir.setFillColor(sf::Color(250, 126, 51));
+            alimentar.setFillColor(sf::Color(255, 229, 64));
+            jugar.setFillColor(sf::Color(255, 229, 64));
+            salir.setFillColor(sf::Color(255, 229, 64));
+            //Cambio de color de botones al ser presionados
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+                bsel.setFillColor(sf::Color(250, 126, 51));
+            } else {
+                bsel.setFillColor(sf::Color(255, 229, 64));
+            }
+                
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+                bder.setFillColor(sf::Color(250, 126, 51));
+                opcion++;
+            } else {
+                bder.setFillColor(sf::Color(255, 229, 64));
+            }
+            break;
+        case 3://Jugar
+            jugar.setFillColor(sf::Color(250, 126, 51));
+            alimentar.setFillColor(sf::Color(255, 229, 64));
+            dormir.setFillColor(sf::Color(255, 229, 64));
+            salir.setFillColor(sf::Color(255, 229, 64));
+            //Cambio de color de botones al ser presionados
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+                bsel.setFillColor(sf::Color(250, 126, 51));
+            } else {
+                bsel.setFillColor(sf::Color(255, 229, 64));
+            }
+                
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+                bder.setFillColor(sf::Color(250, 126, 51));
+                opcion++;
+            } else {
+                bder.setFillColor(sf::Color(255, 229, 64));
+            }
+            break;
+        case 4://Salir
+            salir.setFillColor(sf::Color(250, 126, 51));
+            alimentar.setFillColor(sf::Color(255, 229, 64));
+            dormir.setFillColor(sf::Color(255, 229, 64));
+            jugar.setFillColor(sf::Color(255, 229, 64));
+            //Cambio de color de botones al ser presionados
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+                bsel.setFillColor(sf::Color(250, 126, 51));
+            } else {
+                bsel.setFillColor(sf::Color(255, 229, 64));
+            }
+                
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+                bder.setFillColor(sf::Color(250, 126, 51));
+                opcion++;
+            } else {
+                bder.setFillColor(sf::Color(255, 229, 64));
+            }
+            break;
+        default://Si no es 1,2,3 ó 4
         alimentar.setFillColor(sf::Color(255, 229, 64));
-    }
-
-
-    if(opcion == 2){
-        dormir.setFillColor(sf::Color(250, 126, 51));
-        //Cambio de color de botones al ser presionados
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-            bsel.setFillColor(sf::Color(250, 126, 51));
-        } else {
-            bsel.setFillColor(sf::Color(255, 229, 64));
-        }
-            
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-            bder.setFillColor(sf::Color(250, 126, 51));
-            opcion++;
-        } else {
-            bder.setFillColor(sf::Color(255, 229, 64));
-        }
-    } else {
         dormir.setFillColor(sf::Color(255, 229, 64));
-    }   
-
-
-    if(opcion == 3){
-        jugar.setFillColor(sf::Color(250, 126, 51));
-        //Cambio de color de botones al ser presionados
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-            bsel.setFillColor(sf::Color(250, 126, 51));
-        } else {
-            bsel.setFillColor(sf::Color(255, 229, 64));
-        }
-            
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-            bder.setFillColor(sf::Color(250, 126, 51));
-            opcion++;
-        } else {
-            bder.setFillColor(sf::Color(255, 229, 64));
-        }
-    } else {
         jugar.setFillColor(sf::Color(255, 229, 64));
-    }
-        
-
-    if(opcion == 4){
-        salir.setFillColor(sf::Color(250, 126, 51));
-        //Cambio de color de botones al ser presionados
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-            bsel.setFillColor(sf::Color(250, 126, 51));
-            window.close();
-        } else {
-            bsel.setFillColor(sf::Color(255, 229, 64));
-        }
-            
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-            bder.setFillColor(sf::Color(250, 126, 51));
-            opcion++;
-            if(opcion > 4)
-            {
-                opcion = 1;
-            } 
-        } else {
-            bder.setFillColor(sf::Color(255, 229, 64));
-        }
-    } else {
         salir.setFillColor(sf::Color(255, 229, 64));
+        opcion = 1;
     }
-
 
     // Limpiar la ventana
     window.clear();
