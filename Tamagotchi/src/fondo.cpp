@@ -3,7 +3,11 @@
 
 int main()
 {
+//Variable para switch-case   
 int opcion = 1;
+//Delay para validar el cambio en opcion dentro de switch-case
+sf::Clock delayClock;
+    float delay = 0.5f; //Segundos
 
 sf::RenderWindow window(sf::VideoMode(600, 700), "Tamagotchi");
 //Localizar centro de ventana
@@ -59,7 +63,7 @@ sf::Text S;
     S.setString("S");
     S.setCharacterSize(40);
     S.setFillColor(sf::Color::Black);
-    S.setPosition(187.f,500.f);
+    S.setPosition(187,500);
 
 // Texto botón D
 sf::Text D;
@@ -67,7 +71,7 @@ sf::Text D;
     D.setString("D");
     D.setCharacterSize(40);
     D.setFillColor(sf::Color::Black);
-    D.setPosition(387.f,500.f);
+    D.setPosition(387,500);
 
 //Base azul del Tamagotchi
 sf::CircleShape ovalo(250.f);
@@ -77,12 +81,12 @@ sf::CircleShape ovalo(250.f);
     ovalo.setPosition(center.x - ovalo.getRadius(), center.y - ovalo.getRadius()* ovalo.getScale().y);
 
 //Botón seleccionar
-sf::CircleShape bsel(25.f);
-    bsel.setPosition(175.f,500.f);
+sf::CircleShape bsel(25);
+    bsel.setPosition(175,500);
 
 //Botón derecha
-sf::CircleShape bder(25.f);
-    bder.setPosition(375.f,500.f);
+sf::CircleShape bder(25);
+    bder.setPosition(375,500);
 
 
 while (window.isOpen())
@@ -112,7 +116,10 @@ while (window.isOpen())
                 
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
                 bder.setFillColor(sf::Color(250, 126, 51));
-                opcion++;
+                if(delayClock.getElapsedTime().asSeconds() >= delay){
+                    opcion++;
+                    delayClock.restart();
+                }
             } else {
                 bder.setFillColor(sf::Color(255, 229, 64));
             }
@@ -131,7 +138,10 @@ while (window.isOpen())
                 
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
                 bder.setFillColor(sf::Color(250, 126, 51));
-                opcion++;
+                if(delayClock.getElapsedTime().asSeconds() >= delay){
+                    opcion++;
+                    delayClock.restart();
+                }
             } else {
                 bder.setFillColor(sf::Color(255, 229, 64));
             }
@@ -150,7 +160,10 @@ while (window.isOpen())
                 
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
                 bder.setFillColor(sf::Color(250, 126, 51));
-                opcion++;
+                if(delayClock.getElapsedTime().asSeconds() >= delay){
+                    opcion++;
+                    delayClock.restart();
+                }
             } else {
                 bder.setFillColor(sf::Color(255, 229, 64));
             }
@@ -163,13 +176,17 @@ while (window.isOpen())
             //Cambio de color de botones al ser presionados
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
                 bsel.setFillColor(sf::Color(250, 126, 51));
+                window.close();
             } else {
                 bsel.setFillColor(sf::Color(255, 229, 64));
             }
                 
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
                 bder.setFillColor(sf::Color(250, 126, 51));
-                opcion++;
+                if(delayClock.getElapsedTime().asSeconds() >= delay){
+                    opcion++;
+                    delayClock.restart();
+                }
             } else {
                 bder.setFillColor(sf::Color(255, 229, 64));
             }
