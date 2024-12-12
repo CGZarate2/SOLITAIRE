@@ -5,27 +5,31 @@
     Class Pantalla
     Class Boton
     Class Kirby
+    Class Personaje
     Class Juego
     Class Comida
     Class Siesta
     Class Actividad
     Class Salida
+    Class Vida
     Class Muerte
     
     Usuario "1" o-- "1" Tamagotchi
-    Usuario "1" o-- "1" Salida
     Tamagotchi "1" *-- "1" Pantalla
     Tamagotchi "1" *-- "2" Boton
     Tamagotchi "1" *-- "1" Kirby
 
-    Kirby "1" o-- "1" Pantalla
-    Kirby "1" o-- "3" Juego
     Usuario "1" o-- "2" Boton
-    Muerte "1" o-- "1" Kirby
-
+    Boton "1" o-- "3" Juego
+    Boton "1" o-- "1" Salida
+    Kirby "1" *-- "1" Vida
+    Pantalla "1" *-- "1" Kirby
+    
+    Kirby --|> Personaje
+    Salida --|> Muerte
     Comida --|> Juego
     Siesta --|> Juego
     Actividad --|> Juego
-    Salida --|> Muerte
+    
 
 @enduml
