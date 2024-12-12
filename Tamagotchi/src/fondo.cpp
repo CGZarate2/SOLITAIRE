@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <iostream>
 
 int main()
@@ -8,6 +9,32 @@ int opcion = 1;
 //Delay para validar el cambio en opcion dentro de switch-case
 sf::Clock delayClock;
     float delay = 0.5f; //Segundos
+
+//Delay para reprodir audio de salida
+sf::Clock mdelay;
+
+sf::Music malimentar;//Música de alimentar           
+    if (!malimentar.openFromFile("./assets/music/come.ogg"))
+    {
+        // Error al cargar el archivo de música
+        return -1;
+    }
+sf::Music mdormir;//Música de dormir          
+    if (!mdormir.openFromFile("./assets/music/sape.ogg"))
+    {
+        return -1;
+    }
+sf::Music mjugar;//Música de jugar         
+    if (!mjugar.openFromFile("./assets/music/pelea.ogg"))
+    {
+        return -1;
+    }
+sf::Music msalir;//Música de salir         
+    if (!msalir.openFromFile("./assets/music/sad-violin.ogg"))
+    {
+        return -1;
+    }
+
 
 sf::RenderWindow window(sf::VideoMode(600, 700), "Tamagotchi");
 //Localizar centro de ventana
@@ -110,6 +137,7 @@ while (window.isOpen())
             //Cambio de color de botones al ser presionados
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
                 bsel.setFillColor(sf::Color(250, 126, 51));
+                malimentar.play();
             } else {
                 bsel.setFillColor(sf::Color(255, 229, 64));
             }
@@ -132,6 +160,7 @@ while (window.isOpen())
             //Cambio de color de botones al ser presionados
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
                 bsel.setFillColor(sf::Color(250, 126, 51));
+                mdormir.play();
             } else {
                 bsel.setFillColor(sf::Color(255, 229, 64));
             }
@@ -154,6 +183,7 @@ while (window.isOpen())
             //Cambio de color de botones al ser presionados
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
                 bsel.setFillColor(sf::Color(250, 126, 51));
+                mjugar.play();
             } else {
                 bsel.setFillColor(sf::Color(255, 229, 64));
             }
@@ -176,6 +206,12 @@ while (window.isOpen())
             //Cambio de color de botones al ser presionados
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
                 bsel.setFillColor(sf::Color(250, 126, 51));
+                mdelay.restart();
+                while (mdelay.getElapsedTime().asSeconds() < 4) {
+                    if(msalir.getStatus() == sf::Music::Stopped){
+                        msalir.play();
+                    } 
+                }    
                 window.close();
             } else {
                 bsel.setFillColor(sf::Color(255, 229, 64));
