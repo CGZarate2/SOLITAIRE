@@ -3,6 +3,8 @@
 
 int main()
 {
+int opcion = 1;
+
 sf::RenderWindow window(sf::VideoMode(600, 700), "Tamagotchi");
 //Localizar centro de ventana
 sf::Vector2f center(window.getSize().x / 2.f, window.getSize().y / 2.f);
@@ -51,21 +53,13 @@ sf::RectangleShape fmenu(sf::Vector2f(350, 25));
     fmenu.setFillColor(sf::Color(54, 54, 52));
     fmenu.setPosition(125,400);
 
-// Texto botón A
-sf::Text A;
-    A.setFont(font);
-    A.setString("A");
-    A.setCharacterSize(40);
-    A.setFillColor(sf::Color::Black);
-    A.setPosition(187.f,500.f);
-
 // Texto botón S
 sf::Text S;
     S.setFont(font);
     S.setString("S");
     S.setCharacterSize(40);
     S.setFillColor(sf::Color::Black);
-    S.setPosition(287.f,550.f);
+    S.setPosition(187.f,500.f);
 
 // Texto botón D
 sf::Text D;
@@ -82,13 +76,9 @@ sf::CircleShape ovalo(250.f);
 //Posición del ovalo en el centro de la ventana
     ovalo.setPosition(center.x - ovalo.getRadius(), center.y - ovalo.getRadius()* ovalo.getScale().y);
 
-//Botón izquierda
-sf::CircleShape bizq(25.f);
-    bizq.setPosition(175.f,500.f);
-
 //Botón seleccionar
 sf::CircleShape bsel(25.f);
-    bsel.setPosition(275.f,550.f);
+    bsel.setPosition(175.f,500.f);
 
 //Botón derecha
 sf::CircleShape bder(25.f);
@@ -106,22 +96,12 @@ while (window.isOpen())
         }
     }
 
-    int opcion = 1;
+    
+
     //Acciones según el valor de opcion
     if(opcion == 1){
         alimentar.setFillColor(sf::Color(250, 126, 51));
         //Cambio de color de botones al ser presionados
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-            //Color cuando sea presionado
-            bizq.setFillColor(sf::Color(250, 126, 51));
-            opcion--;
-            if(opcion < 1){
-                opcion = 4;
-            }
-        } else {
-            bizq.setFillColor(sf::Color(255, 229, 64));
-        }
-
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
             bsel.setFillColor(sf::Color(250, 126, 51));
         } else {
@@ -131,10 +111,6 @@ while (window.isOpen())
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
             bder.setFillColor(sf::Color(250, 126, 51));
             opcion++;
-            if(opcion > 4)
-            {
-                opcion = 1;
-            } 
         } else {
             bder.setFillColor(sf::Color(255, 229, 64));
         }        
@@ -146,17 +122,6 @@ while (window.isOpen())
     if(opcion == 2){
         dormir.setFillColor(sf::Color(250, 126, 51));
         //Cambio de color de botones al ser presionados
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-            //Color cuando sea presionado
-            bizq.setFillColor(sf::Color(250, 126, 51));
-            opcion--;
-            if(opcion < 1){
-                opcion = 4;
-            }
-        } else {
-            bizq.setFillColor(sf::Color(255, 229, 64));
-        }
-
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
             bsel.setFillColor(sf::Color(250, 126, 51));
         } else {
@@ -166,10 +131,6 @@ while (window.isOpen())
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
             bder.setFillColor(sf::Color(250, 126, 51));
             opcion++;
-            if(opcion > 4)
-            {
-                opcion = 1;
-            } 
         } else {
             bder.setFillColor(sf::Color(255, 229, 64));
         }
@@ -181,17 +142,6 @@ while (window.isOpen())
     if(opcion == 3){
         jugar.setFillColor(sf::Color(250, 126, 51));
         //Cambio de color de botones al ser presionados
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-            //Color cuando sea presionado
-            bizq.setFillColor(sf::Color(250, 126, 51));
-            opcion--;
-            if(opcion < 1){
-                opcion = 4;
-            }
-        } else {
-            bizq.setFillColor(sf::Color(255, 229, 64));
-        }
-
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
             bsel.setFillColor(sf::Color(250, 126, 51));
         } else {
@@ -201,10 +151,6 @@ while (window.isOpen())
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
             bder.setFillColor(sf::Color(250, 126, 51));
             opcion++;
-            if(opcion > 4)
-            {
-                opcion = 1;
-            } 
         } else {
             bder.setFillColor(sf::Color(255, 229, 64));
         }
@@ -216,17 +162,6 @@ while (window.isOpen())
     if(opcion == 4){
         salir.setFillColor(sf::Color(250, 126, 51));
         //Cambio de color de botones al ser presionados
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-            //Color cuando sea presionado
-            bizq.setFillColor(sf::Color(250, 126, 51));
-            opcion--;
-            if(opcion < 1){
-                opcion = 4;
-            }
-        } else {
-            bizq.setFillColor(sf::Color(255, 229, 64));
-        }
-
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
             bsel.setFillColor(sf::Color(250, 126, 51));
             window.close();
@@ -263,11 +198,9 @@ while (window.isOpen())
     window.draw(salir);
     
     //Botones
-    window.draw(bizq);
     window.draw(bsel);
     window.draw(bder);
     //Texto botones
-    window.draw(A);
     window.draw(S);
     window.draw(D);
     // Mostrar la ventana

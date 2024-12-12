@@ -4,7 +4,7 @@
     Class Tamagotchi
     Class Pantalla
     Class Boton
-    Class Juan
+    Class Kirby
     Class Juego
     Class Comida
     Class Siesta
@@ -15,12 +15,13 @@
     Usuario "1" o-- "1" Tamagotchi
     Usuario "1" o-- "1" Salida
     Tamagotchi "1" *-- "1" Pantalla
-    Tamagotchi "1" *-- "3" Boton
-    Tamagotchi "1" *-- "1" Juan
+    Tamagotchi "1" *-- "2" Boton
+    Tamagotchi "1" *-- "1" Kirby
 
-    Juan "1" o-- "1" Pantalla
-    Juan "1" o-- "3" Juego
-    Muerte "1" o-- "1" Juan
+    Kirby "1" o-- "1" Pantalla
+    Kirby "1" o-- "3" Juego
+    Usuario "1" o-- "2" Boton
+    Muerte "1" o-- "1" Kirby
 
     Comida --|> Juego
     Siesta --|> Juego
