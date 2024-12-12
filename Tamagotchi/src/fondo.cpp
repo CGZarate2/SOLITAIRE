@@ -29,26 +29,23 @@ sf::Text alimentar;
     alimentar.setFont(font);
     alimentar.setString("Alimentar");
     alimentar.setCharacterSize(15);
-    alimentar.setFillColor(sf::Color(255, 229, 64));
     alimentar.setPosition(130,405);
 sf::Text dormir;
     dormir.setFont(font);
     dormir.setString("Dormir");
     dormir.setCharacterSize(15);
-    dormir.setFillColor(sf::Color(255, 229, 64));
     dormir.setPosition(250,405);
 sf::Text jugar;
     jugar.setFont(font);
     jugar.setString("Jugar");
     jugar.setCharacterSize(15);
-    jugar.setFillColor(sf::Color(255, 229, 64));
     jugar.setPosition(350,405);
 sf::Text salir;
     salir.setFont(font);
     salir.setString("Salir");
     salir.setCharacterSize(15);
-    salir.setFillColor(sf::Color(255, 229, 64));
     salir.setPosition(425,405);
+
 //Fondo de menú en pantalla
 sf::RectangleShape fmenu(sf::Vector2f(350, 25));
     fmenu.setFillColor(sf::Color(54, 54, 52));
@@ -104,27 +101,153 @@ while (window.isOpen())
     while (window.pollEvent(event))
     {
         // Verificar si se ha cerrado la ventana
-        if (event.type == sf::Event::Closed)
+        if (event.type == sf::Event::Closed){
             window.close();
+        }
     }
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-        //Color cuando sea presionado
-        bizq.setFillColor(sf::Color(250, 126, 51));
+    int opcion = 1;
+    //Acciones según el valor de opcion
+    if(opcion == 1){
+        alimentar.setFillColor(sf::Color(250, 126, 51));
+        //Cambio de color de botones al ser presionados
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+            //Color cuando sea presionado
+            bizq.setFillColor(sf::Color(250, 126, 51));
+            opcion--;
+            if(opcion < 1){
+                opcion = 4;
+            }
+        } else {
+            bizq.setFillColor(sf::Color(255, 229, 64));
+        }
+
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+            bsel.setFillColor(sf::Color(250, 126, 51));
+        } else {
+            bsel.setFillColor(sf::Color(255, 229, 64));
+        }
+            
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+            bder.setFillColor(sf::Color(250, 126, 51));
+            opcion++;
+            if(opcion > 4)
+            {
+                opcion = 1;
+            } 
+        } else {
+            bder.setFillColor(sf::Color(255, 229, 64));
+        }        
     } else {
-        bizq.setFillColor(sf::Color(255, 229, 64));
+        alimentar.setFillColor(sf::Color(255, 229, 64));
     }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-        bsel.setFillColor(sf::Color(250, 126, 51));
+
+
+    if(opcion == 2){
+        dormir.setFillColor(sf::Color(250, 126, 51));
+        //Cambio de color de botones al ser presionados
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+            //Color cuando sea presionado
+            bizq.setFillColor(sf::Color(250, 126, 51));
+            opcion--;
+            if(opcion < 1){
+                opcion = 4;
+            }
+        } else {
+            bizq.setFillColor(sf::Color(255, 229, 64));
+        }
+
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+            bsel.setFillColor(sf::Color(250, 126, 51));
+        } else {
+            bsel.setFillColor(sf::Color(255, 229, 64));
+        }
+            
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+            bder.setFillColor(sf::Color(250, 126, 51));
+            opcion++;
+            if(opcion > 4)
+            {
+                opcion = 1;
+            } 
+        } else {
+            bder.setFillColor(sf::Color(255, 229, 64));
+        }
     } else {
-        bsel.setFillColor(sf::Color(255, 229, 64));
-    }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-        bder.setFillColor(sf::Color(250, 126, 51));
+        dormir.setFillColor(sf::Color(255, 229, 64));
+    }   
+
+
+    if(opcion == 3){
+        jugar.setFillColor(sf::Color(250, 126, 51));
+        //Cambio de color de botones al ser presionados
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+            //Color cuando sea presionado
+            bizq.setFillColor(sf::Color(250, 126, 51));
+            opcion--;
+            if(opcion < 1){
+                opcion = 4;
+            }
+        } else {
+            bizq.setFillColor(sf::Color(255, 229, 64));
+        }
+
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+            bsel.setFillColor(sf::Color(250, 126, 51));
+        } else {
+            bsel.setFillColor(sf::Color(255, 229, 64));
+        }
+            
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+            bder.setFillColor(sf::Color(250, 126, 51));
+            opcion++;
+            if(opcion > 4)
+            {
+                opcion = 1;
+            } 
+        } else {
+            bder.setFillColor(sf::Color(255, 229, 64));
+        }
     } else {
-        bder.setFillColor(sf::Color(255, 229, 64));
+        jugar.setFillColor(sf::Color(255, 229, 64));
     }
-    
+        
+
+    if(opcion == 4){
+        salir.setFillColor(sf::Color(250, 126, 51));
+        //Cambio de color de botones al ser presionados
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+            //Color cuando sea presionado
+            bizq.setFillColor(sf::Color(250, 126, 51));
+            opcion--;
+            if(opcion < 1){
+                opcion = 4;
+            }
+        } else {
+            bizq.setFillColor(sf::Color(255, 229, 64));
+        }
+
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+            bsel.setFillColor(sf::Color(250, 126, 51));
+            window.close();
+        } else {
+            bsel.setFillColor(sf::Color(255, 229, 64));
+        }
+            
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+            bder.setFillColor(sf::Color(250, 126, 51));
+            opcion++;
+            if(opcion > 4)
+            {
+                opcion = 1;
+            } 
+        } else {
+            bder.setFillColor(sf::Color(255, 229, 64));
+        }
+    } else {
+        salir.setFillColor(sf::Color(255, 229, 64));
+    }
+
 
     // Limpiar la ventana
     window.clear();
