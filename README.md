@@ -27,4 +27,4 @@ Juego tipo **Tamagotchi**, en el que hay 3 actividades disponibles a realizar co
 
 ## Acerca de:
 
-[Repositorio de **Github**](https://github.com/CGZarate2/Tamagotchi.git)
+[Repositorio de **Github**](https://github.com/CGZarate2/Tamagotchi.git"En caso de que se abra fuera de github")
