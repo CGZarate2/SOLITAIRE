@@ -17,7 +17,7 @@ int main() {
     kirby.setAnimationFrames("chill", 0.3f, true);
 
     // Ajustar la posición inicial de Kirby dentro de la pantalla
-    kirby.setPosition(175, 200);
+    kirby.setPosition(250, 250);
 
     // Cargar los audios
     sf::Music malimentar, mdormir, mjugar, msalir;
@@ -129,17 +129,20 @@ int main() {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
             bsel.setFillColor(sf::Color(250, 126, 51));
             switch (opcion) {
-                bool ejecution = false;
+                
                 case 1:
-                    kirby.setAnimationFrames("eating", 0.2f, false); // Alimentar
+                    kirby.setAnimationFrames("eating", 0.1f, false); // Alimentar
+                    kirby.setPosition(250, 250);
                     malimentar.play();
                     break;
                 case 2:
-                    kirby.setAnimationFrames("sleeping", 0.4f, false); // Dormir
+                    kirby.setAnimationFrames("sleeping", 0.1f, false); // Dormir
+                    kirby.setPosition(250, 250);
                     mdormir.play();
                     break;
                 case 3:
-                    kirby.setAnimationFrames("playing", 0.25f, true); // Jugar
+                    kirby.setAnimationFrames("playing", 0.1f, true); // Jugar
+                    kirby.setPosition(245, 260);
                     mjugar.play();
                     break;
                 case 4:

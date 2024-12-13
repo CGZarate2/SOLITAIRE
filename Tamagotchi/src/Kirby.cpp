@@ -19,19 +19,19 @@ Kirby::Kirby(const std::string& texturePath, float frameTime, bool isCyclic)
     };
 
     animations["eating"] = {
-        sf::IntRect(5, 130, 25, 32),  // Frame 1
-        sf::IntRect(29, 130, 25, 32), // Frame 2
-        sf::IntRect(54, 130, 25, 32), // Frame 3
-        sf::IntRect(79, 130, 25, 32), // Frame 4
-        sf::IntRect(103, 130, 25, 32) // Frame 5
+        sf::IntRect(5, 130, 25, 28),  // Frame 1
+        sf::IntRect(29, 130, 25, 28), // Frame 2
+        sf::IntRect(54, 130, 25, 28), // Frame 3
+        sf::IntRect(79, 130, 25, 28), // Frame 4
+        sf::IntRect(103, 130, 25, 28) // Frame 5
     };
 
     animations["sleeping"] = {
-        sf::IntRect(7, 155, 30, 32),  // Frame 1
-        sf::IntRect(32, 155, 30, 32), // Frame 2
-        sf::IntRect(59, 155, 25, 32), // Frame 3
-        sf::IntRect(86, 155, 25, 32), // Frame 4
-        sf::IntRect(113, 155, 25, 32), // Frame 5
+        sf::IntRect(7, 155, 28, 28),  // Frame 1
+        sf::IntRect(32, 155, 28, 28), // Frame 2
+        sf::IntRect(59, 155, 25, 28), // Frame 3
+        sf::IntRect(86, 155, 25, 28), // Frame 4
+        sf::IntRect(113, 155, 25, 28), // Frame 5
         sf::IntRect(140, 155, 33, 35), // Frame 6
         sf::IntRect(168, 155, 25, 32), // Frame 7
         sf::IntRect(197, 155, 30, 32)  // Frame 8
