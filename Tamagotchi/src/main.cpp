@@ -135,6 +135,7 @@ int main() {
                     kirby.setPosition(250, 250);
                     malimentar.play();
                     break;
+                
                 case 2:
                     kirby.setAnimationFrames("sleeping", 0.1f, false); // Dormir
                     kirby.setPosition(250, 250);
@@ -151,13 +152,14 @@ int main() {
                     window.close();
                     break;
             }
+            
         } else {
             bsel.setFillColor(sf::Color(255, 229, 64));
         }
 
         // Actualizar la animación de Kirby
         kirby.update();
-
+        
         // Resaltar opción actual
         alimentar.setFillColor(opcion == 1 ? sf::Color(250, 126, 51) : sf::Color(255, 229, 64));
         dormir.setFillColor(opcion == 2 ? sf::Color(250, 126, 51) : sf::Color(255, 229, 64));
