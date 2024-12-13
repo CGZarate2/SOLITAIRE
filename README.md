@@ -2,7 +2,7 @@
 ## Descripción
 Juego tipo **Tamagotchi**, en el que hay 3 actividades disponibles a realizar con el carismático personaje por defecto, donde se interactua por medio de 2 teclas para desplazarse en un menú principal.
 ## Manual
-1. Ejecutar el programa
+1. Ejecutar main.cpp
 2. Apariencia:
     * Forma de Tamagotchi que cuenta con una pantalla y 2 botones (S y D), diferenciados entre si por su inicial, en la pantalla se muestra al personaje, y al menú principal en la parte inferior de la misma.
 3. Menú:
