@@ -28,3 +28,8 @@ Juego tipo **Tamagotchi**, en el que hay 3 actividades disponibles a realizar co
 ## Acerca de:
 
 [Repositorio de **Github**](https://github.com/CGZarate2/Tamagotchi.git)
+
+## Capturas de funcionamiento
+![Alimentar](Tamagotchi/assets/images/Captura_1.png)
+![Jugar](Tamagotchi/assets/images/Captura_3.png)
+
